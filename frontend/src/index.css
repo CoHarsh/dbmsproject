@@ -26,3 +26,12 @@ code {
   margin-bottom: 20px;
   width: 500px !important;
 }
+
+.serchbar{
+  border-radius:50px !important;
+  position: relative;
+  width: 50vw;
+  left: 25vw;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}

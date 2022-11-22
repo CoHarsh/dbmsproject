@@ -14,5 +14,5 @@ app.use(indexRoutes);
 app.use(express.urlencoded({extended: false}));
 
 app.listen(4920, () => {
-  console.log("Server running on port 3000");
+  console.log("Server running on port 4920");
 });

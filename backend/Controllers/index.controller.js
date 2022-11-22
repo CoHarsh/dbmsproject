@@ -11,6 +11,8 @@ const client = new Client({
   port: 5432,
 })
 
+
+
 client.connect();
 
 const getUsers = async (req,res) => {
@@ -32,6 +34,17 @@ const getUsers = async (req,res) => {
 //     return res.status(500).json("Internal server error");
 //   }
 // };
+
+const gettheProductHistory = async (req,res) => {
+  try {
+    const response = await client.query("SELECT * FROM PRICE NATURAL JOIN PRODUCT WHERE product_id = 2");
+    return res.status(200).json(response.rows);
+  }
+  catch (err) {
+    console.log(err);
+    return res.status(500).json({err: err.message});
+  }
+}
 
 const getPlatform = async (req,res) => {
   try {
@@ -88,4 +101,4 @@ const deleteUser = async (req, res) => {
 
 
 
-module.exports = {deleteUser,updateUser,createUser,getUserById,getUsers,getPlatform}
+module.exports = {deleteUser,updateUser,createUser,getUserById,getUsers,getPlatform,gettheProductHistory}
